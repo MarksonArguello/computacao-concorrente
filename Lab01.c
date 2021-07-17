@@ -38,7 +38,7 @@ int main(void) {
 
     for (int i = 0; i < NTHREADS; i++) {
         (arg + i) -> inicio = intervalo * i;
-        (arg + i) -> inicio = intervalo * (i+1);
+        (arg + i) -> fim = intervalo * (i+1);
 
 
         if (pthread_create(&tid_sistema[i], NULL, elevaAoQuadrado, (void *) (arg + i))) {
