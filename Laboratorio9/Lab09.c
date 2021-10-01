@@ -60,6 +60,7 @@ void* produtor(void* arg) {
 
 		sem_post(&mutex);
 	}
+	pthread_exit(NULL);
 }
 
 void* consumidor(void* arg) {
@@ -84,6 +85,7 @@ void* consumidor(void* arg) {
 			sem_post(&emptySlots);
 		}
 	}
+	pthread_exit(NULL);
 }
 
 pthread_t* createTid(int N) {
